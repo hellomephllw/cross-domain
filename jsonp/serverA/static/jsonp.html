@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp客户端实现</title>
+</head>
+<body>
+<button>jsonp</button>
+<script src="/jq.js"></script>
+<script>
+    $("button").click(function() {
+        /*
+        * 1.url问好后面的参数必须写一个callback=?，固定搭配，是套路
+        * 2.dataType可以写jsonp或者json，jquery会自动帮你把上面所说的callback中的?替换为一个函数名并附上随机数
+        * */
+        $.ajax({
+            url: "http://127.0.0.1:3001/getJson?username=zhangsan&callback=?",
+            dataType: "json",
+            success: function(data) {
+                console.info(data);
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "react_test",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "server.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "llw",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^1.2.0",
+    "koa-body": "^1.4.0",
+    "koa-router": "^5.4.0",
+    "koa-static": "^2.0.0"
+  }
+}

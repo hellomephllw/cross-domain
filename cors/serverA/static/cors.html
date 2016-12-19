@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cors客户端实现</title>
+</head>
+<body>
+<button>cors</button>
+<script src="/jq.js"></script>
+<script>
+    $("button").click(function() {
+        $.ajax({
+            type: "post",
+            data: {
+                username: "zhangsan",
+                password: "123456"
+            },
+            url: "http://127.0.0.1:3001/getJson",
+            success: function(data) {
+                console.info(data);
+            }
+        });
+    });
+</script>
+</body>
+</html>

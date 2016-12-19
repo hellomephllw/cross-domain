@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">click</button>
+<script>
+    var btnEle = document.getElementById("btn");
+    btnEle.onclick = function() {
+        window.fetch("http://localhost:3001/getJson", {
+            method: "post",
+            headers: { 'Content-Type': "application/x-www-form-urlencoded"},//post提交必须设置
+            mode: "cors",//cors跨域设置
+            credentials: "include",//默认请求不带cookie，此设置可带cookie
+            body: "username=zhangsan&password=123456"
+        }).then(function(res) {
+            res.text().then(function(text) {
+                console.info(text);
+            });
+        });
+    };
+</script>
+</body>
+</html>
